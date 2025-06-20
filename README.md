@@ -1,39 +1,61 @@
-# Smart Garden IoT
+# 🌿 Smart Garden IoT - Penyiraman Tanaman Otomatis
 
-Sistem penyiraman tanaman otomatis berbasis IoT dengan mikrokontroler NodeMCU (ESP8266), sensor kelembaban tanah, suhu dan kelembaban udara, serta aplikasi Blynk Android.
+Proyek ini merupakan sistem penyiraman tanaman otomatis berbasis Internet of Things (IoT) menggunakan NodeMCU (ESP8266), sensor kelembaban tanah, sensor suhu dan kelembaban udara (DHT11 & DS18B20), serta aplikasi Android Blynk.
 
-## Fitur
+## 🔧 Fitur
+- Mode otomatis dan manual
+- Monitoring kelembaban tanah, suhu, dan kelembaban udara
+- Tampilan lokal via LCD 16x2
+- Pengontrolan pompa air via aplikasi Android (Blynk)
+- Respon cepat, hemat air & waktu
 
-- Otomatis & manual kontrol pompa air
-- Monitoring suhu, kelembaban tanah, dan kelembaban udara via smartphone
-- Tampilan LCD lokal (16x2)
-- IoT berbasis aplikasi Blynk
+## 📦 Komponen
+| Komponen            | Jumlah | Deskripsi                                |
+|---------------------|--------|------------------------------------------|
+| NodeMCU ESP8266     | 1      | Mikrokontroler utama dengan koneksi WiFi |
+| Sensor Soil Moisture| 1      | Mengukur kelembaban tanah                |
+| Sensor DHT11        | 1      | Suhu dan kelembaban udara                |
+| Sensor DS18B20      | 1      | Sensor suhu akurat (opsional)           |
+| Relay 5V            | 1      | Mengaktifkan pompa air                   |
+| Pompa air mini      | 1      | Untuk menyiram tanaman                   |
+| LCD 16x2 I2C        | 1      | Menampilkan data secara lokal            |
 
-## Komponen
-
-- NodeMCU ESP8266
-- Sensor Soil Moisture
-- Sensor DHT11
-- Sensor DS18B20
-- Relay 5V
-- Pompa air mini
-- LCD 16x2 I2C
-
-## Instalasi
-
-1. Upload file `SmartGarden.ino` ke board NodeMCU.
-2. Pastikan library Arduino sudah terinstal:
+## 🛠️ Instalasi
+1. Buka file `smart_garden.ino` di Arduino IDE.
+2. Install library berikut:
    - Blynk
-   - DallasTemperature
-   - OneWire
    - DHT
+   - OneWire
+   - DallasTemperature
    - LiquidCrystal_I2C
-3. Jalankan dan sambungkan ke jaringan WiFi Anda.
+3. Masukkan `BLYNK_AUTH_TOKEN`, SSID WiFi, dan password kamu.
+4. Upload ke NodeMCU, dan sambungkan perangkat.
 
-## Dokumentasi
+## 📱 Tampilan Aplikasi Blynk
+- Virtual Pin:
+  - V1: Suhu (DS18B20)
+  - V2: Kelembaban tanah
+  - V3: Kelembaban udara
+  - V4: Toggle Mode Otomatis/Manual
+  - V5: Kontrol pompa (mode manual)
 
-Lihat folder `proposal/` untuk file proposal tugas akhir dalam bentuk `.docx`.
+## 📃 Dokumentasi
+Proposal Tugas Akhir: [`Proposal UP.docx`](proposal/Proposal%20UP.docx)
 
-## Lisensi
+## 🧪 Hasil Pengujian
+- Delay rata-rata 2.75 detik
+- Hemat air hingga 46% dibanding penyiraman manual
+- Sistem stabil dan bisa dipantau dari jarak jauh
 
-[MIT License](LICENSE)
+## 📸 Gambar Prototipe
+![prototype](images/prototype.jpg)
+
+## 📝 Lisensi
+MIT License — silakan gunakan, ubah, dan distribusikan dengan menyebutkan pembuat.
+
+## 👥 Kontributor
+- Yusuf Harry Setiawan
+- Daffa Hariz
+- Muhammad Faisal Syafiq
+- Azrial Farabi Fashih
+- Panji Purwito Armin
